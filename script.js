@@ -46,7 +46,8 @@
                     klon.querySelector(".kort").textContent += kort;
                     klon.querySelector(".smag").textContent += "smag: " + drink.gsx$smag.$t;
                     klon.querySelector(".billede").src = "img/pic.svg";
-                    klon.querySelector(".billede").alt = "Billede af " + drink.gsx$navn.$t;
+                    /*HUSK AT TILFØJE ALT TIL BILLEDET*/
+                    /*klon.querySelector(".billede").alt = "Billede af " + drink.gsx$navn.$t;*/
                     /*Herunder sættes informationen ind på hjemmesiden.
 
                 Til sidst indsætter vi informationen i templaten så dataen hentet fra json bliver vist i listen */
