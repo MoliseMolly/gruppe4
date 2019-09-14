@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Bungee|Exo+2|Rokkitt&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <img src="header_img.svg" alt="Bistro Babushka logo og navn">
+    </header>
+
+    <nav class="menu">
+        <button data-kategori="alle" class="valgt">Alle</button>
+        <button data-kategori="svarhedsgrad">Sværhedsgrad</button>
+        <button data-kategori="navn">Navn</button>
+        <button data-kategori="alkohol">Alkohol</button>
+
+    </nav>
+
+    <h1>Menu</h1>
+
+    <section id="liste"></section>
+
+
+    <template>
+        <article class="drink">
+            <img src="" alt="" class="billede">
+            <h2 class="navn"></h2>
+            <p class="kort"></p>
+            <p class="smag"></p>
+
+        </article>
+    </template>
+
+    <div id="popup">
+        <button class="luk">X</button>
+        <section class="indhold">
+            <article class="enkeltDrink">
+                <h2></h2>
+                <img class="billede" src="" alt="">
+                <p class="lang"></p>
+                <p class="smag"></p>
+            </article>
+        </section>
+    </div>
+
+    <footer>
+        <div class="footer_left">
+            <address>Addresse: <br>Grønnegade 97<br>1234 København K </address>
+        </div>
+        <div class="footer_right">
+
+            <aside>Åbningstider: <br> Mandag – fredag 10:30 – 22:00<br>Lørdag 12:00 – 23:00</aside>
+        </div>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body></html>

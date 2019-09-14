@@ -1,0 +1,139 @@
+<style > * {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #494E50;
+
+}
+
+
+img {
+    width: 50%;
+}
+
+p {
+    color: #FFFFFF;
+    font-family: 'Exo 2', sans-serif;
+
+}
+
+h1 {
+    color: #A3C9D9;
+    font-family: 'Rokkitt', serif;
+
+}
+
+h2 h3 h4 {
+    color: #380000;
+    font-family: 'Bungee', cursive;
+}
+
+h2:hover h3:hover {
+    color: #FFFFFF;
+
+}
+
+a {
+    color: #A3C9D9;
+    font-family: 'Exo 2', sans-serif;
+
+}
+
+
+
+#liste {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(1, 1fr);
+
+}
+
+#popup {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, .7);
+    display: none;
+}
+
+.luk {
+    position: fixed;
+    right: 0;
+    font-size: 2rem;
+}
+
+.indhold {
+    width: 70vw;
+    min-height: 50vh;
+    background: #fff;
+    margin: 4rem auto;
+    padding: 10px;
+}
+
+.menu,
+h1 {
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.drink {
+    padding: 1em;
+    padding: 10px;
+    background-color: gainsboro;
+    border: solid lightgrey 1px;
+}
+
+button {
+    margin: .5em;
+    color: #FFFFFF;
+    background-color: #380000;
+    border-radius: 10%;
+    border: solid lightgray 1px;
+}
+
+.valgt {
+    background-color: #A3C9D9;
+    color: #1D1D1D;
+}
+
+@media screen and (min-width:600px) {
+
+    #liste {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    footer {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        padding: 10px;
+    }
+}
+
+@media screen and (min-width:768px) {
+    #liste {
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 960px;
+        margin: 0 auto;
+
+    }
+
+    footer {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        padding: 10px;
+    }
+}
+
+footer {
+    margin-top: 10px;
+    background: gray;
+    color: white;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 10px;
+}
+
+</style >
