@@ -41,7 +41,8 @@
                     const navn = drink.gsx$navn.$t;
                     const kort = drink.gsx$kort.$t;
                     const smag = drink.gsx$smag.$t;
-                    const billede = drink.gsx$billede.$t;
+                    /*HUSK AT SLETTE DET NEDENUNDER SOM KOMMENTAR NÅR BILLEDET ER KOMMET PÅ*/
+                    /*const billede = drink.gsx$billede.$t;*/
                     klon.querySelector(".navn").textContent = navn;
                     klon.querySelector(".kort").textContent += kort;
                     klon.querySelector(".smag").textContent += "smag: " + drink.gsx$smag.$t;
