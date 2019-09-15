@@ -85,7 +85,9 @@
             document.querySelector(".enkeltDrink .billede").alt = "Billede af " + drink.gsx$navn.$t;
 
             document.querySelector(".enkeltDrink .kort").textContent = drink.gsx$kort.$t;
-            document.querySelector(".enkeltDrink .lang").textContent = drink.gsx$lang.$t;
+            document.querySelector(".enkeltDrink .info").textContent = drink.gsx$info.$t;
+            document.querySelector(".enkeltDrink .ingredienser").textContent = drink.gsx$ingredienser.$t;
+            document.querySelector(".enkeltDrink .opskrift").textContent = drink.gsx$opskrift.$t;
 
             document.querySelector(".enkeltDrink .smag").textContent = drink.gsx$smag.$t;
 
