@@ -22,12 +22,16 @@ p {
 h1 {
     color: #A3C9D9;
     font-family: 'Rokkitt', serif;
+    font-weight: 900;
 
 }
 
-h2 h3 h4 {
+h2,
+h3,
+h4 {
     color: #380000;
-    font-family: 'Bungee', cursive;
+    font-family: 'Rokkitt', serif;
+    font-weight: 900;
 }
 
 h2:hover h3:hover {
@@ -85,8 +89,6 @@ h1 {
 .drink {
     padding: 1em;
     padding: 10px;
-    background-color: gainsboro;
-    border: solid lightgrey 1px;
 }
 
 button {
@@ -100,6 +102,17 @@ button {
 .valgt {
     background-color: #A3C9D9;
     color: #1D1D1D;
+}
+
+.overskrift_kategori {
+
+    max-width: 900px;
+    margin: 0 auto;
+    margin-top: 3rem;
+}
+
+.hide {
+    display: none;
 }
 
 @media screen and (min-width:600px) {

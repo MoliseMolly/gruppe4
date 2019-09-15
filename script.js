@@ -10,7 +10,6 @@
 
         const liste = document.querySelector("#liste");
         const skabelon = document.querySelector("template").content;
-        const h1 = document.querySelector("h1");
         const filterKnapper = document.querySelectorAll("button");
         let data;
         let filter = "alle";
@@ -19,7 +18,7 @@
         function filtrer() {
             console.log(filter);
             filter = this.dataset.kategori;
-            h1.textContent = this.textContent;
+            document.querySelector(".overskrift_kategori").textContent = this.textContent;
             filterKnapper.forEach(knap => knap.classList.remove("valgt"));
             this.classList.add("valgt");
             vis(data);
@@ -33,21 +32,27 @@
         }
 
         function vis(data) {
-            liste.textContent = "";
+            liste.innerHTML = "";
             data.feed.entry.forEach(drink => {
                 //console.log(drink.gsx$kort.$t)
                 if (drink.gsx$sværhedsgrad.$t == filter || filter == "alle") {
-                    const klon = skabelon.cloneNode(true);
-                    const navn = drink.gsx$navn.$t;
+                    let klon = skabelon.cloneNode(true);
+
                     const kort = drink.gsx$kort.$t;
                     const smag = drink.gsx$smag.$t;
+
                     /*HUSK AT SLETTE DET NEDENUNDER SOM KOMMENTAR NÅR BILLEDET ER KOMMET PÅ*/
                     /*const billede = drink.gsx$billede.$t;*/
-                    klon.querySelector(".navn").textContent = navn;
-                    klon.querySelector(".kort").textContent += kort;
-                    klon.querySelector(".smag").textContent += "smag: " + drink.gsx$smag.$t;
-                    klon.querySelector(".billede").src = "img/pic.svg";
-                    /*HUSK AT TILFØJE ALT TIL BILLEDET*/
+                    klon.querySelector(".navn").textContent = drink.gsx$navn.$t;
+                    klon.querySelector(".kort").textContent = kort;
+                    klon.querySelector(".smag").textContent = "smag: " + drink.gsx$smag.$t;
+
+                    //ikke alle billeder er jpg, så her sørges for undtagelsen, nemlig et jpeg billede af en mojito
+                    if (drink.gsx$billeder.$t == "mojito") {
+                        klon.querySelector(".billede").src = `/img/${drink.gsx$billeder.$t}.jpeg`;
+                    } else {
+                        klon.querySelector(".billede").src = `/img/${drink.gsx$billeder.$t}.jpg`;
+                    } /*HUSK AT TILFØJE ALT TIL BILLEDET*/
                     /*klon.querySelector(".billede").alt = "Billede af " + drink.gsx$navn.$t;*/
                     /*Herunder sættes informationen ind på hjemmesiden.
 
@@ -57,7 +62,7 @@
 
                     /*Herunder gøres visEnkel til en klikbar i templaten */
                     liste.lastElementChild.addEventListener("click", () => {
-                        visEnkel(drink)
+                        visEnkel(drink);
                     });
                 }
             })
@@ -70,7 +75,12 @@
 
             document.querySelector(".enkeltDrink h2").textContent = drink.gsx$navn.$t;
 
-            document.querySelector(".enkeltDrink .billede").src = "img/pic.svg";
+
+            if (drink.gsx$billeder.$t == "mojito") {
+                document.querySelector(".enkeltDrink .billede").src = `/img/${drink.gsx$billeder.$t}.jpeg`;
+            } else {
+                document.querySelector(".enkeltDrink .billede").src = `/img/${drink.gsx$billeder.$t}.jpg`;
+            }
 
             document.querySelector(".enkeltDrink .billede").alt = "Billede af " + drink.gsx$navn.$t;
 
@@ -83,4 +93,5 @@
 
         function lukEnkel() {
             document.querySelector("#popup").style.display = "none";
+            console.log(data);
         }

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
-    <link href="https://fonts.googleapis.com/css?family=Bungee|Exo+2|Rokkitt&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Exo+2:400,900|Rokkitt:400,500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -14,18 +14,16 @@
     </header>
 
     <nav class="menu">
-        <button data-kategori="alle" class="valgt">Alle</button>
+        <button data-kategori="alle" class="valgt">Alle Cocktails</button>
         <button data-kategori="Begynder">Let</button>
         <button data-kategori="Letøvet">Mellem</button>
         <button data-kategori="Svær">Øvet</button>
 
     </nav>
 
-    <h1>Menu</h1>
+    <h1 class="overskrift_kategori">Alle Cocktails</h1>
 
     <section id="liste"></section>
-
-
     <template>
         <article class="drink">
             <img src="" alt="" class="billede">
@@ -36,17 +34,45 @@
         </article>
     </template>
 
-    <div id="popup">
-        <button class="luk">X</button>
+    <section id="popup" class="hide">
         <section class="indhold">
             <article class="enkeltDrink">
+                <button class="luk">X</button>
                 <h2></h2>
                 <img class="billede" src="" alt="">
-                <p class="lang"></p>
-                <p class="smag"></p>
+                <p class="lang">Lang</p>
+                <p class="smag">Smag</p>
+
             </article>
         </section>
-    </div>
+    </section>
+
+    <!--
+    <section class="container"></section>
+    <template>
+        <article id="item">
+            <img src="" alt="">
+            <h2 class="name"></h2>
+            <p class="info"></p>
+            <p class="cost"></p>
+        </article>
+    </template>
+
+    <section id="detail" class="hide">
+        <article class="item">
+            <button class="close">←</button>
+
+            <img src="" alt="">
+            <h2></h2>
+
+            <p class="info"></p>
+            <p class="origin"></p>
+            <p class="info_long"></p>
+            <p class="cost"></p>
+
+        </article>
+    </section>
+-->
 
     <footer>
         <div class="footer_left">
