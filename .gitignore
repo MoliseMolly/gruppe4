@@ -3,3 +3,10 @@
 # Example .gitignore files: https://github.com/github/gitignore
 /bower_components/
 /node_modules/
+
+# JPEG
+*.jpg
+*.jpeg
+
+# Portable Network Graphics
+*.png

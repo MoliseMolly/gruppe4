@@ -10,7 +10,7 @@ body {
 
 
 img {
-    width: 50%;
+    width: 100%;
 }
 
 p {
@@ -73,10 +73,13 @@ a {
     padding: 10px;
 }
 
-.menu,
 h1 {
     margin-left: 20px;
     margin-bottom: 20px;
+}
+
+.menu {
+    text-align: center;
 }
 
 .drink {

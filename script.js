@@ -36,7 +36,7 @@
             liste.textContent = "";
             data.feed.entry.forEach(drink => {
                 //console.log(drink.gsx$kort.$t)
-                if (drink.gsx$kategori.$t == filter || filter == "alle") {
+                if (drink.gsx$sværhedsgrad.$t == filter || filter == "alle") {
                     const klon = skabelon.cloneNode(true);
                     const navn = drink.gsx$navn.$t;
                     const kort = drink.gsx$kort.$t;
