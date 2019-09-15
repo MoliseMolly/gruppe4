@@ -1,5 +1,4 @@
-        /*Herunder sikres at JavaScriptet først udføres når DOM er loaded*/
-        document.addEventListener("DOMContentLoaded", loadData);
+        document.addEventListener("DOMContentLoaded", loadData); /*Det sikres at JavaScriptet først udføres når DOM er loaded*/
 
         /*Herunder hentes informationen fra Google sheets, omformes til JSON og indsættes i den første template.*/
 
@@ -18,7 +17,8 @@
         function filtrer() {
             console.log(filter);
             filter = this.dataset.kategori;
-            document.querySelector(".overskrift_kategori").textContent = this.textContent;
+
+            document.querySelector(".overskrift_kategori").textContent = `${this.textContent} Cocktails`;
             filterKnapper.forEach(knap => knap.classList.remove("valgt"));
             this.classList.add("valgt");
             vis(data);
@@ -44,8 +44,8 @@
                     /*HUSK AT SLETTE DET NEDENUNDER SOM KOMMENTAR NÅR BILLEDET ER KOMMET PÅ*/
                     /*const billede = drink.gsx$billede.$t;*/
                     klon.querySelector(".navn").textContent = drink.gsx$navn.$t;
-                    klon.querySelector(".kort").textContent = kort;
-                    klon.querySelector(".smag").textContent = "smag: " + drink.gsx$smag.$t;
+                    //klon.querySelector(".kort").textContent = kort;
+                    //klon.querySelector(".smag").textContent = "smag: " + drink.gsx$smag.$t;
 
                     //ikke alle billeder er jpg, så her sørges for undtagelsen, nemlig et jpeg billede af en mojito
                     if (drink.gsx$billeder.$t == "mojito") {
@@ -73,7 +73,7 @@
             document.querySelector("#popup .luk").addEventListener("click", lukEnkel);
 
 
-            document.querySelector(".enkeltDrink h2").textContent = drink.gsx$navn.$t;
+            document.querySelector(".enkeltDrink h1").textContent = drink.gsx$navn.$t;
 
 
             if (drink.gsx$billeder.$t == "mojito") {
@@ -84,7 +84,7 @@
 
             document.querySelector(".enkeltDrink .billede").alt = "Billede af " + drink.gsx$navn.$t;
 
-
+            document.querySelector(".enkeltDrink .kort").textContent = drink.gsx$kort.$t;
             document.querySelector(".enkeltDrink .lang").textContent = drink.gsx$lang.$t;
 
             document.querySelector(".enkeltDrink .smag").textContent = drink.gsx$smag.$t;
