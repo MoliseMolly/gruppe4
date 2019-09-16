@@ -75,7 +75,7 @@
 
             document.querySelector(".enkeltDrink h1").textContent = drink.gsx$navn.$t;
 
-
+            /*Jeg forstår ikke helt hvorfor der er brug for of else ? - Molly*/
             if (drink.gsx$billeder.$t == "mojito") {
                 document.querySelector(".enkeltDrink .billede").src = `/img/${drink.gsx$billeder.$t}.jpeg`;
             } else {
@@ -90,7 +90,6 @@
             document.querySelector(".enkeltDrink .opskrift").textContent = drink.gsx$opskrift.$t;
 
             document.querySelector(".enkeltDrink .smag").textContent = drink.gsx$smag.$t;
-
         }
 
         function lukEnkel() {
