@@ -47,6 +47,7 @@ a {
 }
 
 #splash {
+    margin-top: 50px;
     background-position: bottom;
     /* Make the background image cover the area of the <div>, and clip the excess */
     background-size: cover;
@@ -205,11 +206,12 @@ button {
 
     #logo {
         height: 100px;
-        margin-top: 400px;
+        margin-top: 300px;
     }
 
     #splash {
-        height: 500px;
+        height: 400px;
+
     }
 
     button {
