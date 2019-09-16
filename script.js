@@ -38,9 +38,6 @@
                 if (drink.gsx$sværhedsgrad.$t == filter || filter == "alle") {
                     let klon = skabelon.cloneNode(true);
 
-                    const kort = drink.gsx$kort.$t;
-                    const smag = drink.gsx$smag.$t;
-
                     /*HUSK AT SLETTE DET NEDENUNDER SOM KOMMENTAR NÅR BILLEDET ER KOMMET PÅ*/
                     /*const billede = drink.gsx$billede.$t;*/
                     klon.querySelector(".navn").textContent = drink.gsx$navn.$t;
@@ -48,6 +45,9 @@
                     //klon.querySelector(".smag").textContent = "smag: " + drink.gsx$smag.$t;
 
                     //ikke alle billeder er jpg, så her sørges for undtagelsen, nemlig et jpeg billede af en mojito
+                    klon.querySelector(".sværhedsgrad").textContent = drink.gsx$sværhedsgrad.$t;
+                    klon.querySelector(".kort").textContent = drink.gsx$kort.$t;
+
                     if (drink.gsx$billeder.$t == "mojito") {
                         klon.querySelector(".billede").src = `/img/${drink.gsx$billeder.$t}.jpeg`;
                     } else {

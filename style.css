@@ -63,7 +63,6 @@ a {
 
 #liste {
     display: grid;
-    grid-gap: 8px;
     grid-template-columns: repeat(1, 1fr);
 
 }
@@ -116,11 +115,40 @@ a {
 }
 
 .drink {
-    padding: 1em;
+    padding: 1.2em;
 }
 
 .drink h2 {
     color: white;
+    margin: 0;
+    margin-left: 1rem;
+    margin-top: 0.5rem;
+    font-size: 20px;
+}
+
+.drink .sværhedsgrad {
+    margin: 0;
+    margin-left: 1rem;
+    font-size: 14px;
+}
+
+.drink .kort {
+    position: absolute;
+    margin: 0;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    font-size: 18px;
+    visibility: hidden;
+    width: 160px;
+}
+
+.drink:hover img {
+    opacity: 0.2;
+}
+
+.drink:hover .kort {
+    visibility: visible;
+    opacity: 1;
 }
 
 .overskrift_opskrift {
@@ -200,13 +228,14 @@ button {
     .drink {}
 
     .drink:nth-child(1) {
-        grid-column: 1/3;
-        grid-row: 2/4;
+        grid-column: 3/5;
+        grid-row: 1/3;
+
     }
 
     .drink:nth-child(4) {
-        grid-column: 3/5;
-        grid-row: 1/3;
+        grid-column: 1/3;
+        grid-row: 2/4;
     }
 
     .drink:nth-child(7) {
