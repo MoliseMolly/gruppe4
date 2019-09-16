@@ -47,8 +47,11 @@ a {
 }
 
 #splash {
-
-    background-size: contain;
+    background-position: bottom;
+    /* Make the background image cover the area of the <div>, and clip the excess */
+    background-size: cover;
+    height: 600px;
+    background-image: url(img/whiskey-and-cigars-1.jpeg);
 }
 
 #liste {
@@ -102,7 +105,7 @@ a {
 }
 
 #logo {
-
+    margin-top: 400px;
     height: 70px;
     margin-left: -30vw;
 }
