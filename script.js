@@ -44,15 +44,20 @@
                     //klon.querySelector(".kort").textContent = kort;
                     //klon.querySelector(".smag").textContent = "smag: " + drink.gsx$smag.$t;
 
-                    //ikke alle billeder er jpg, så her sørges for undtagelsen, nemlig et jpeg billede af en mojito
+
                     klon.querySelector(".sværhedsgrad").textContent = drink.gsx$sværhedsgrad.$t;
                     klon.querySelector(".kort").textContent = drink.gsx$kort.$t;
+                    klon.querySelector(".billede").src = `${drink.gsx$links.$t}`;
 
+                    /*
+                    //ikke alle billeder er jpg, så her sørges for undtagelsen, nemlig et jpeg billede af en mojito
                     if (drink.gsx$billeder.$t == "mojito") {
                         klon.querySelector(".billede").src = `/img/${drink.gsx$billeder.$t}.jpeg`;
                     } else {
                         klon.querySelector(".billede").src = `/img/${drink.gsx$billeder.$t}.jpg`;
-                    } /*HUSK AT TILFØJE ALT TIL BILLEDET*/
+                    }*/
+
+                    /*HUSK AT TILFØJE ALT TIL BILLEDET*/
                     /*klon.querySelector(".billede").alt = "Billede af " + drink.gsx$navn.$t;*/
                     /*Herunder sættes informationen ind på hjemmesiden.
 
@@ -75,12 +80,8 @@
 
             document.querySelector(".enkeltDrink h1").textContent = drink.gsx$navn.$t;
 
-            /*Jeg forstår ikke helt hvorfor der er brug for of else ? - Molly*/
-            if (drink.gsx$billeder.$t == "mojito") {
-                document.querySelector(".enkeltDrink .billede").src = `/img/${drink.gsx$billeder.$t}.jpeg`;
-            } else {
-                document.querySelector(".enkeltDrink .billede").src = `/img/${drink.gsx$billeder.$t}.jpg`;
-            }
+
+            document.querySelector(".enkeltDrink .billede").src = `${drink.gsx$links.$t}`;
 
             document.querySelector(".enkeltDrink .billede").alt = "Billede af " + drink.gsx$navn.$t;
 

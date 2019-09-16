@@ -4,9 +4,4 @@
 /bower_components/
 /node_modules/
 
-# JPEG
-*.jpg
-*.jpeg
-
-# Portable Network Graphics
-*.png
+#vi har ikke en stor nok mængde af billeder til at vi skal ignore dem, vi henter næsten alle billeder ned fra nettet
