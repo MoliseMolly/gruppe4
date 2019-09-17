@@ -212,6 +212,15 @@ button:hover {
     padding-left: 3rem;
 }
 
+#detalje {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.tilbage {
+    font-size: 28px;
+}
+
 .hide {
     display: none;
 }

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+
+    <!--
+    <style>
+        body {
+            margin: 0;
+            background: #7D370E;
+            font-family: "helvetica";
+        }
+
+        #detail {
+            height: calc(100vh - 17px);
+            width: 100vw;
+
+
+        }
+
+        #detail .close {
+            position: fixed;
+            top: 12px;
+            left: 12px;
+            font-size: 2rem;
+            background-color: white;
+            border-radius: 12px;
+            border: none;
+        }
+
+        #detail .item {
+
+            margin: 4rem auto;
+            padding: 4rem;
+            background: white;
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        @media screen and (min-width: 990px) {
+            width: calc(100vw - 17px);
+        }
+    </style>
+-->
+</head>
+
+<body>
+    <!--  <section id="detail">
+        <article class="item">
+            <button class="close">←</button>
+
+            <img src="" alt="">
+            <h2></h2>
+
+            <p class="info"></p>
+            <p class="origin"></p>
+            <p class="info_long"></p>
+            <p class="cost"></p>
+
+        </article>
+    </section>-->
+    <section id="detalje">
+        <article class="enkeltDrink">
+            <button class="tilbage">←</button>
+            <img class="billede" src="" alt="">
+            <h1></h1>
+            <div class="row">
+                <div class="column">
+                    <p class="smag">Smag</p>
+                    <p class="kort">Kort</p>
+                </div>
+                <div class="column">
+                    <p class="info">info</p>
+                </div>
+            </div>
+
+            <div class="row" id="opskrift_row">
+                <div class="column">
+                    <h3 class="overskrift_opskrift">Opskrift</h3>
+
+                    <div class="column">
+
+                        <p class="ingredienser">ingredienser</p>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="column">
+                        <p class="opskrift">opskrift</p>
+                    </div>
+                </div>
+            </div>
+
+        </article>
+
+    </section>
+</body></html>
+
+<script>
+    document.addEventListener("DOMContentLoaded", getJson);
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const navn = urlParams.get("navn");
+
+    let menu = [];
+
+    const sheetID = "1KoSuwJPPKYzKrQBBJKelTWXBCg_V3-kY3BJI9e0mfPs";
+    const url = `https://spreadsheets.google.com/feeds/list/${sheetID}/od6/public/values?alt=json`;
+
+    async function getJson() {
+
+        let jsonData = await fetch(url);
+        menu = await jsonData.json();
+        show();
+
+    }
+
+    function show() {
+        document.querySelector(".tilbage").addEventListener("click", function() {
+            history.back();
+        });
+
+        menu.feed.entry.forEach(drink => {
+            if (drink.gsx$navn.$t == navn) {
+                            document.querySelector(".enkeltDrink h1").textContent = drink.gsx$navn.$t;
+
+
+            document.querySelector(".enkeltDrink .billede").src = `${drink.gsx$links.$t}`;
+
+            document.querySelector(".enkeltDrink .billede").alt = "Billede af " + drink.gsx$navn.$t;
+
+            document.querySelector(".enkeltDrink .kort").textContent = drink.gsx$kort.$t;
+            document.querySelector(".enkeltDrink .info").textContent = drink.gsx$info.$t;
+            document.querySelector(".enkeltDrink .ingredienser").textContent = drink.gsx$ingredienser.$t;
+            document.querySelector(".enkeltDrink .opskrift").textContent = drink.gsx$opskrift.$t;
+
+            document.querySelector(".enkeltDrink .smag").textContent = drink.gsx$smag.$t;
+                /*
+                document.querySelector("#detail h2").textContent = item.gsx$navn.$t;
+                document.querySelector("#detail .origin").textContent = `Oprindelse: ${item.gsx$oprindelse.$t}`;
+                document.querySelector("#detail img").src = `images/large/${item.gsx$billede.$t}.jpg`;
+                document.querySelector("#detail img").alt = `Portræt af ${item.gsx$navn.$t}`;
+                document.querySelector("#detail .info").textContent = item.gsx$kort.$t;
+                document.querySelector("#detail .info_long").textContent = item.gsx$lang.$t;
+
+                document.querySelector("#detail .cost").textContent = `Pris: ${item.gsx$pris.$t},-`;
+                */
+            }
+
+        });
+
+    }
+
+</script>

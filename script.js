@@ -65,15 +65,15 @@
                     liste.appendChild(klon);
 
 
-                    /*Herunder gøres visEnkel til en klikbar i templaten */
+                    /*Herunder gøres elementer klikbart, hvilket fører til undersiden for elementet  */
                     liste.lastElementChild.addEventListener("click", () => {
-                        visEnkel(drink);
+                        location.href = `underside_detalje.html?navn=${drink.gsx$navn.$t}`;
                     });
                 }
             })
         }
 
-        function visEnkel(drink) {
+        /*  function visEnkel(drink) {
             document.querySelector("#popup").style.display = "block";
             document.querySelector("#popup .luk").addEventListener("click", lukEnkel);
 
@@ -97,3 +97,4 @@
             document.querySelector("#popup").style.display = "none";
             console.log(data);
         }
+*/
