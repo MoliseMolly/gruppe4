@@ -78,26 +78,27 @@
                     <p class="kort">Kort</p>
                 </div>
                 <div class="column">
-                    <p class="info">info</p>
+                    <p class="info linebreak">info</p>
                 </div>
             </div>
-
-            <div class="row" id="opskrift_row">
-                <div class="column">
-                    <h3 class="overskrift_opskrift">Opskrift</h3>
-
+            <section id="section_opskrift">
+                <h3 class="overskrift_opskrift">Opskrift</h3>
+                <div class="row" id="opskrift_row">
                     <div class="column">
 
-                        <p class="ingredienser">ingredienser</p>
-                    </div>
-                </div>
-                <div class="column">
-                    <div class="column">
-                        <p class="opskrift">opskrift</p>
-                    </div>
-                </div>
-            </div>
 
+                        <div class="column">
+
+                            <p class="ingredienser linebreak">ingredienser</p>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="column">
+                            <p class="opskrift linebreak">opskrift</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </article>
 
     </section>
@@ -129,29 +130,21 @@
 
         menu.feed.entry.forEach(drink => {
             if (drink.gsx$navn.$t == navn) {
-                            document.querySelector(".enkeltDrink h1").textContent = drink.gsx$navn.$t;
+                document.querySelector(".enkeltDrink h1").textContent = drink.gsx$navn.$t;
 
 
-            document.querySelector(".enkeltDrink .billede").src = `${drink.gsx$links.$t}`;
+                document.querySelector(".enkeltDrink .billede").src = `${drink.gsx$links.$t}`;
 
-            document.querySelector(".enkeltDrink .billede").alt = "Billede af " + drink.gsx$navn.$t;
+                document.querySelector(".enkeltDrink .billede").alt = "Billede af " + drink.gsx$navn.$t;
 
-            document.querySelector(".enkeltDrink .kort").textContent = drink.gsx$kort.$t;
-            document.querySelector(".enkeltDrink .info").textContent = drink.gsx$info.$t;
-            document.querySelector(".enkeltDrink .ingredienser").textContent = drink.gsx$ingredienser.$t;
-            document.querySelector(".enkeltDrink .opskrift").textContent = drink.gsx$opskrift.$t;
+                document.querySelector(".enkeltDrink .kort").textContent = drink.gsx$kort.$t;
+                document.querySelector(".enkeltDrink .info").textContent = drink.gsx$info.$t;
+                document.querySelector(".enkeltDrink .ingredienser").textContent = drink.gsx$ingredienser.$t;
+                document.querySelector(".enkeltDrink .opskrift").textContent = drink.gsx$opskrift.$t;
 
-            document.querySelector(".enkeltDrink .smag").textContent = drink.gsx$smag.$t;
-                /*
-                document.querySelector("#detail h2").textContent = item.gsx$navn.$t;
-                document.querySelector("#detail .origin").textContent = `Oprindelse: ${item.gsx$oprindelse.$t}`;
-                document.querySelector("#detail img").src = `images/large/${item.gsx$billede.$t}.jpg`;
-                document.querySelector("#detail img").alt = `Portræt af ${item.gsx$navn.$t}`;
-                document.querySelector("#detail .info").textContent = item.gsx$kort.$t;
-                document.querySelector("#detail .info_long").textContent = item.gsx$lang.$t;
+                document.querySelector(".enkeltDrink .smag").textContent = "Smag: " +drink.gsx$smag.$t + " Alkohol: " + drink.gsx$alkohol.$t;
 
-                document.querySelector("#detail .cost").textContent = `Pris: ${item.gsx$pris.$t},-`;
-                */
+
             }
 
         });

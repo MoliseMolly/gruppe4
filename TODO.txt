@@ -1,6 +1,7 @@
 Sæt indholdet pænt op i drinksvisning mobil
-Prøv at se på listevisning fra sheet til ingredienserne
-Lav sitet til newpage
 Indsæt billederne som baggrunde for kontinuitet
 Opdater logo
-Juster hover til at være ved image hover
+(Juster hover til at være ved image hover)
+
+imgs til forsiden:
+https://cocktailcollective.com.au/wp-content/uploads/2019/06/Bertoux-main.jpg

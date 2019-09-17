@@ -52,6 +52,7 @@ a {
     /* Make the background image cover the area of the <div>, and clip the excess */
     background-size: cover;
     height: 300px;
+
     background-image: url(https://assets.punchdrink.com/wp-content/uploads/2019/06/21091956/Article-Tom-Macy-Clover-Club-Brugal-1888-Rum-Old-Fashioned-Cocktail-Recipe.jpg);
 }
 
@@ -118,6 +119,10 @@ a {
     padding: 1.2em;
 }
 
+.billede {
+    border-radius: 3px;
+}
+
 .drink h2 {
     color: white;
     margin: 0;
@@ -155,23 +160,49 @@ a {
 .drink:hover .kort {
     visibility: visible;
     opacity: 1;
+}
 
+#detalje h1 {
+    margin-left: 60px;
+}
+
+#detalje .kort,
+#detalje .smag {
+    font-size: 22px;
+    margin: 10px 15px 0px 60px;
+
+}
+
+#detalje .info {
+    margin-right: 60px;
+    margin-left: 60px;
 }
 
 .overskrift_opskrift {
     font-size: 30px;
     color: white;
-    margin-left: 5vw;
+    margin: 0;
+    margin-left: 3vw;
+
+}
+
+#section_opskrift {
+    background-color: #380000;
+    margin: 0 60px;
+    margin-bottom: 100px;
+    padding: 30px 0;
+    border-radius: 3px;
+    margin-top: 50px;
 }
 
 #opskrift_row {
-    background-color: #380000;
-    margin: 0 7vw;
+    margin: 0 3vw;
 }
 
 #opskrift_row p,
 h3 {
-    margin-left: 10px;
+
+    padding-top: 0px;
 }
 
 button {
@@ -188,16 +219,6 @@ button {
 button:hover {
     cursor: pointer;
     opacity: 0.7;
-}
-
-.row {
-    display: flex;
-}
-
-.column {
-    flex-direction: column;
-    flex-grow: 1;
-    flex-basis: 100px;
 }
 
 .valgt {
@@ -219,6 +240,16 @@ button:hover {
 
 .tilbage {
     font-size: 28px;
+}
+
+/* dette anvendes for at beholde linebreaks på ingredienslisten, så de ikke kollapser som med whitespace normal */
+.linebreak {
+    white-space: pre-wrap;
+    margin-right: 15px;
+}
+
+#detalje .opskrift {
+    margin-left: 15px;
 }
 
 .hide {
@@ -292,6 +323,22 @@ button:hover {
     .indhold {
         max-width: 1000px;
     }
+
+    .row {
+        display: flex;
+    }
+
+    .column {
+        flex-direction: column;
+        flex-grow: 1;
+        flex-basis: 100px;
+    }
+
+    #detalje .info {
+        margin-left: 15px;
+    }
+
+
 }
 
 footer {
