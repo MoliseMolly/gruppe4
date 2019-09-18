@@ -4,4 +4,4 @@
 /bower_components/
 /node_modules/
 
-#vi har ikke en stor nok mængde af billeder til at vi skal ignore dem, vi henter næsten alle billeder ned fra nettet
+#Vi henter alle billeder fra nettet undtagen logoet, så derfor er der ikke noget at ignorere
