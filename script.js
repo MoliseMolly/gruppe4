@@ -4,7 +4,6 @@
 
         const sheetID = "1KoSuwJPPKYzKrQBBJKelTWXBCg_V3-kY3BJI9e0mfPs";
         const url = `https://spreadsheets.google.com/feeds/list/${sheetID}/od6/public/values?alt=json`;
-
         /**/
 
         const liste = document.querySelector("#liste");
@@ -35,7 +34,7 @@
             liste.innerHTML = "";
             data.feed.entry.forEach(drink => {
                 //console.log(drink.gsx$kort.$t)
-                if (drink.gsx$sværhedsgrad.$t == filter || filter == "alle") {
+                if (drink.gsx$svaerhedsgrad.$t == filter || filter == "alle") {
                     let klon = skabelon.cloneNode(true);
 
                     /*HUSK AT SLETTE DET NEDENUNDER SOM KOMMENTAR NÅR BILLEDET ER KOMMET PÅ*/
@@ -45,7 +44,7 @@
                     //klon.querySelector(".smag").textContent = "smag: " + drink.gsx$smag.$t;
 
 
-                    klon.querySelector(".sværhedsgrad").textContent = drink.gsx$sværhedsgrad.$t;
+                    klon.querySelector(".svaerhedsgrad").textContent = drink.gsx$svaerhedsgrad.$t;
                     klon.querySelector(".kort").textContent = drink.gsx$kort.$t;
                     let billede = `url(${drink.gsx$links.$t})`
                     klon.querySelector(".billede").style.backgroundImage = billede;

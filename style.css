@@ -130,7 +130,7 @@ a {
     background-position: center;
     /* Make the background image cover the area of the <div>, and clip the excess */
     background-size: cover;
-    height: 300px;
+    height: 200px;
 }
 
 .drink h2 {
@@ -141,7 +141,7 @@ a {
     font-size: 20px;
 }
 
-.drink .sværhedsgrad {
+.drink .svaerhedsgrad {
     margin: 0;
     margin-left: 1rem;
     font-size: 14px;
@@ -327,6 +327,10 @@ button:hover {
     #detalje .info {
         margin-left: 15px;
     }
+
+    .billede {
+        height: 200px;
+    }
 }
 
 @media screen and (min-width:768px) {
@@ -348,12 +352,7 @@ button:hover {
 
     .drink:nth-child(7) {
         grid-column: 2/4;
-        grid-row: 4/5;
-    }
-
-    .drink:nth-child(6) {
-        grid-column: 1/2;
-        grid-row: 4/5;
+        grid-row: 4/4;
     }
 
     #logo {
@@ -373,7 +372,9 @@ button:hover {
         max-width: 1000px;
     }
 
-
+    .billede {
+        height: 300px;
+    }
 
 
 }
