@@ -161,10 +161,8 @@ a {
     cursor: pointer;
 }
 
-.drink:hover img {
+.drink:hover .billede {
     opacity: 0.2;
-
-
 }
 
 .drink:hover .kort {
