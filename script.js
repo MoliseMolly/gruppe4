@@ -47,7 +47,8 @@
 
                     klon.querySelector(".sværhedsgrad").textContent = drink.gsx$sværhedsgrad.$t;
                     klon.querySelector(".kort").textContent = drink.gsx$kort.$t;
-                    klon.querySelector(".billede").src = `${drink.gsx$links.$t}`;
+                    let billede = `url(${drink.gsx$links.$t})`
+                    klon.querySelector(".billede").style.backgroundImage = billede;
 
                     /*
                     //ikke alle billeder er jpg, så her sørges for undtagelsen, nemlig et jpeg billede af en mojito

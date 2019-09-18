@@ -1,7 +1,3 @@
-Sæt indholdet pænt op i drinksvisning mobil
 Indsæt billederne som baggrunde for kontinuitet
 Opdater logo
 (Juster hover til at være ved image hover)
-
-imgs til forsiden:
-https://cocktailcollective.com.au/wp-content/uploads/2019/06/Bertoux-main.jpg

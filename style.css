@@ -1,10 +1,17 @@
+:root {
+    --main-color: #28414e;
+    --secondary-color: #380000;
+    --accent-color: #a3c9d9;
+    --text-color: white;
+}
+
 <style > * {
     margin: 0;
     box-sizing: border-box;
 }
 
 body {
-    background-color: #494E50;
+    background-color: var(--main-color);
     margin: 0;
 }
 
@@ -20,7 +27,7 @@ p {
 }
 
 h1 {
-    color: #A3C9D9;
+    color: var(--accent-color);
     font-family: 'Rokkitt', serif;
     font-weight: 900;
     margin-left: 20px;
@@ -31,18 +38,17 @@ h1 {
 h2,
 h3,
 h4 {
-    color: #380000;
+    color: var(--secondary-color);
     font-family: 'Rokkitt', serif;
     font-weight: 900;
 }
 
 h2:hover h3:hover {
-    color: #FFFFFF;
-
+    color: var(--text-color);
 }
 
 a {
-    color: #A3C9D9;
+    color: var(--accent-color);
     font-family: 'Exo 2', sans-serif;
 }
 
@@ -80,7 +86,7 @@ a {
 .indhold {
     width: 80vw;
     min-height: 50vh;
-    background: #494E50;
+    background: var(--main-color);
     margin: 1rem auto;
     padding: 10px;
 }
@@ -121,10 +127,14 @@ a {
 
 .billede {
     border-radius: 3px;
+    background-position: center;
+    /* Make the background image cover the area of the <div>, and clip the excess */
+    background-size: cover;
+    height: 300px;
 }
 
 .drink h2 {
-    color: white;
+    color: var(--text-color);
     margin: 0;
     margin-left: 1rem;
     margin-top: 0.5rem;
@@ -162,54 +172,72 @@ a {
     opacity: 1;
 }
 
+#detalje {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.tilbage {
+    font-size: 22px;
+}
+
 #detalje h1 {
-    margin-left: 60px;
+    margin-left: 30px;
+    font-size: 28px;
 }
 
 #detalje .kort,
 #detalje .smag {
-    font-size: 22px;
-    margin: 10px 15px 0px 60px;
-
+    font-size: 18px;
+    margin: 10px 15px 0px 30px;
 }
 
 #detalje .info {
-    margin-right: 60px;
-    margin-left: 60px;
-}
-
-.overskrift_opskrift {
-    font-size: 30px;
-    color: white;
-    margin: 0;
-    margin-left: 3vw;
-
+    margin-right: 30px;
+    margin-left: 30px;
 }
 
 #section_opskrift {
-    background-color: #380000;
-    margin: 0 60px;
+    background-color: var(--secondary-color);
+    margin: 0 30px;
     margin-bottom: 100px;
     padding: 30px 0;
     border-radius: 3px;
     margin-top: 50px;
 }
 
+.overskrift_opskrift {
+    font-size: 28px;
+    color: white;
+    margin: 0;
+    margin-left: 30px;
+}
+
 #opskrift_row {
-    margin: 0 3vw;
+    margin: 0 30px;
 }
 
 #opskrift_row p,
 h3 {
-
     padding-top: 0px;
+}
+
+/* dette anvendes for at beholde linebreaks på ingredienslisten, så de ikke kollapser som med whitespace normal */
+.linebreak {
+    white-space: pre-wrap;
+    margin-right: 15px;
+}
+
+#detalje .opskrift {
+    margin-left: 0;
+    margin-right: 0;
 }
 
 button {
     margin: 0.5rem;
     color: #FFFFFF;
-    background-color: #380000;
-    border-radius: 3%;
+    background-color: var(--secondary-color);
+    border-radius: 3px;
     border: none;
     font-family: 'Exo 2', sans-serif;
     text-align: center;
@@ -222,8 +250,8 @@ button:hover {
 }
 
 .valgt {
-    background-color: #A3C9D9;
-    color: #1D1D1D;
+    background-color: var(--accent-color);
+    color: var(--main-color);
 }
 
 .overskrift_kategori {
@@ -231,25 +259,6 @@ button:hover {
     margin: 0 auto;
     margin-top: 3rem;
     padding-left: 3rem;
-}
-
-#detalje {
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.tilbage {
-    font-size: 28px;
-}
-
-/* dette anvendes for at beholde linebreaks på ingredienslisten, så de ikke kollapser som med whitespace normal */
-.linebreak {
-    white-space: pre-wrap;
-    margin-right: 15px;
-}
-
-#detalje .opskrift {
-    margin-left: 15px;
 }
 
 .hide {
@@ -262,10 +271,63 @@ button:hover {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    footer {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        padding: 10px;
+    #detalje h1 {
+        margin-left: 60px;
+        font-size: 40px;
+    }
+
+    #detalje .kort,
+    #detalje .smag {
+        font-size: 22px;
+        margin-left: 60px;
+
+    }
+
+    #detalje .info {
+        margin-right: 60px;
+        margin-left: 60px;
+    }
+
+    .overskrift_opskrift {
+        font-size: 30px;
+    }
+
+    #section_opskrift {
+        margin: 0 60px;
+        margin-bottom: 100px;
+        margin-top: 50px;
+    }
+
+    #opskrift_row,
+    .overskrift_opskrift {
+        margin: 0 60px;
+    }
+
+    #opskrift_row p,
+    h3 {
+        padding-top: 0px;
+    }
+
+    .linebreak {
+        margin-right: 15px;
+    }
+
+    #detalje .opskrift {
+        margin-left: 15px;
+    }
+
+    .row {
+        display: flex;
+    }
+
+    .column {
+        flex-direction: column;
+        flex-grow: 1;
+        flex-basis: 100px;
+    }
+
+    #detalje .info {
+        margin-left: 15px;
     }
 }
 
@@ -274,15 +336,11 @@ button:hover {
         grid-template-columns: repeat(4, 1fr);
         max-width: 960px;
         margin: 0 auto;
-
     }
-
-    .drink {}
 
     .drink:nth-child(1) {
         grid-column: 3/5;
         grid-row: 1/3;
-
     }
 
     .drink:nth-child(4) {
@@ -300,12 +358,6 @@ button:hover {
         grid-row: 4/5;
     }
 
-    footer {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        padding: 10px;
-    }
-
     #logo {
         height: 100px;
         margin-top: 300px;
@@ -313,7 +365,6 @@ button:hover {
 
     #splash {
         height: 400px;
-
     }
 
     button {
@@ -324,30 +375,9 @@ button:hover {
         max-width: 1000px;
     }
 
-    .row {
-        display: flex;
-    }
-
-    .column {
-        flex-direction: column;
-        flex-grow: 1;
-        flex-basis: 100px;
-    }
-
-    #detalje .info {
-        margin-left: 15px;
-    }
 
 
-}
 
-footer {
-    margin-top: 10px;
-    background: gray;
-    color: white;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    padding: 10px;
 }
 
 </style >
