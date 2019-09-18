@@ -133,6 +133,10 @@ a {
     height: 200px;
 }
 
+.stort_billede {
+    border-radius: 3px;
+}
+
 .drink h2 {
     color: var(--text-color);
     margin: 0;

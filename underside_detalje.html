@@ -6,71 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cocks &amp; Tails</title>
     <link rel="stylesheet" href="style.css">
-
-    <!--
-    <style>
-        body {
-            margin: 0;
-            background: #7D370E;
-            font-family: "helvetica";
-        }
-
-        #detail {
-            height: calc(100vh - 17px);
-            width: 100vw;
-
-
-        }
-
-        #detail .close {
-            position: fixed;
-            top: 12px;
-            left: 12px;
-            font-size: 2rem;
-            background-color: white;
-            border-radius: 12px;
-            border: none;
-        }
-
-        #detail .item {
-
-            margin: 4rem auto;
-            padding: 4rem;
-            background: white;
-            max-width: 960px;
-            margin: 0 auto;
-        }
-
-        img {
-            width: 100%;
-        }
-
-        @media screen and (min-width: 990px) {
-            width: calc(100vw - 17px);
-        }
-    </style>
--->
 </head>
 
 <body>
-    <!--  <section id="detail">
-        <article class="item">
-            <button class="close">←</button>
 
-            <img src="" alt="">
-            <h2></h2>
-
-            <p class="info"></p>
-            <p class="origin"></p>
-            <p class="info_long"></p>
-            <p class="cost"></p>
-
-        </article>
-    </section>-->
     <section id="detalje">
         <article class="enkeltDrink">
             <button class="tilbage">←</button>
-            <img class="billede" src="" alt="">
+            <img class="stort_billede" src="" alt="">
             <h1></h1>
             <div class="row">
                 <div class="column">
@@ -102,7 +45,9 @@
         </article>
 
     </section>
-</body></html>
+</body>
+
+</html>
 
 <script>
     document.addEventListener("DOMContentLoaded", getJson);
@@ -133,16 +78,16 @@
                 document.querySelector(".enkeltDrink h1").textContent = drink.gsx$navn.$t;
 
 
-                document.querySelector(".enkeltDrink .billede").src = `${drink.gsx$links.$t}`;
+                document.querySelector(".enkeltDrink .stort_billede").src = `${drink.gsx$links.$t}`;
 
-                document.querySelector(".enkeltDrink .billede").alt = "Billede af " + drink.gsx$navn.$t;
+                document.querySelector(".enkeltDrink .stort_billede").alt = "Billede af " + drink.gsx$navn.$t;
 
                 document.querySelector(".enkeltDrink .kort").textContent = drink.gsx$kort.$t;
                 document.querySelector(".enkeltDrink .info").textContent = drink.gsx$info.$t;
                 document.querySelector(".enkeltDrink .ingredienser").textContent = drink.gsx$ingredienser.$t;
                 document.querySelector(".enkeltDrink .opskrift").textContent = drink.gsx$opskrift.$t;
 
-                document.querySelector(".enkeltDrink .smag").textContent = "Smag: " +drink.gsx$smag.$t + " Alkohol: " + drink.gsx$alkohol.$t;
+                document.querySelector(".enkeltDrink .smag").textContent = "Smag: " + drink.gsx$smag.$t + " Alkohol: " + drink.gsx$alkohol.$t;
 
 
             }
