@@ -1,30 +1,31 @@
         document.addEventListener("DOMContentLoaded", loadData); /*Det sikres at JavaScriptet først udføres når DOM er loaded*/
 
-        /*Herunder hentes informationen fra Google sheets, omformes til JSON og indsættes i den første template.*/
-
+        /* konstanter og variabler initialiseres */
         const sheetID = "1KoSuwJPPKYzKrQBBJKelTWXBCg_V3-kY3BJI9e0mfPs";
         const url = `https://spreadsheets.google.com/feeds/list/${sheetID}/od6/public/values?alt=json`;
-        /**/
 
         const liste = document.querySelector("#liste");
         const skabelon = document.querySelector("template").content;
         const filterKnapper = document.querySelectorAll("button");
         let data;
         let filter = "alle";
+        // filterknapperne får allesammen en eventlistener
         filterKnapper.forEach(knap => knap.addEventListener("click", filtrer));
 
         function filtrer() {
-            console.log(filter);
+            //filter sættes til teksten fra den knap der blev trykket på
             filter = this.dataset.kategori;
-
+            //overskriften ændres til at sige hvordan der filtreres
             document.querySelector(".overskrift_kategori").textContent = `${this.textContent} Cocktails`;
+            //den highlightede knap flyttes til den nye aktive kategori
             filterKnapper.forEach(knap => knap.classList.remove("valgt"));
             this.classList.add("valgt");
             vis(data);
         }
 
-
+        //da denne function skal hente sheetet ned, skal den være async, da det ikke vides hvor langt tid det tager at hente det ned, da det er et asynkront element
         async function loadData() {
+            //hiver sheetet ned og smider det ind som array i variablen data
             const response = await fetch(url);
             data = await response.json();
             vis(data);
