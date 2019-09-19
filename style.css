@@ -1,28 +1,19 @@
 :root {
-    --main-color: #28414e;
+    --main-color: #334b6d;
+    /*28414e*/
     --secondary-color: #380000;
     --accent-color: #a3c9d9;
     --text-color: white;
 }
 
-<style > * {
-    margin: 0;
+* {
+    /* Med border-box forbliver elementerne samme størrelse, selv med padding og border, så bliver elementet bare mindre, hvilket gør det nemmere at arbejde med størrelser */
     box-sizing: border-box;
 }
 
 body {
     background-color: var(--main-color);
     margin: 0;
-}
-
-
-img {
-    width: 100%;
-}
-
-p {
-    color: #FFFFFF;
-    font-family: 'Exo 2', sans-serif;
 
 }
 
@@ -38,19 +29,21 @@ h1 {
 h2,
 h3,
 h4 {
-    color: var(--secondary-color);
+    color: var(--text-color);
     font-family: 'Rokkitt', serif;
     font-weight: 900;
 }
 
-h2:hover h3:hover {
-    color: var(--text-color);
+p {
+    color: #FFFFFF;
+    font-family: 'Exo 2', sans-serif;
 }
 
+/* Vi har ikke nogen links, så denne skal ikke bruges
 a {
     color: var(--accent-color);
     font-family: 'Exo 2', sans-serif;
-}
+}*/
 
 #splash {
     margin-top: 50px;
@@ -166,12 +159,13 @@ a {
 }
 
 .drink:hover .billede {
-    opacity: 0.2;
+    opacity: 0.5;
 }
 
 .drink:hover .kort {
     visibility: visible;
     opacity: 1;
+    z-index: 1;
 }
 
 #detalje {
@@ -383,4 +377,6 @@ button:hover {
 
 }
 
-</style >
+img {
+    width: 100%;
+}

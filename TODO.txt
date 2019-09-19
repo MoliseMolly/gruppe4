@@ -1,3 +1,2 @@
-Indsæt billederne som baggrunde for kontinuitet
 Opdater logo
 (Juster hover til at være ved image hover)

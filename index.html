@@ -1,22 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<!-- Sitet er på dansk, men dette declareres ikke (<html lang="da">) da det engentlig ikke behøves. Tagget er med henblik på søgeresultater, hvilket vi har slået fra -->
+
 
 <head>
     <meta charset="UTF-8">
     <title>Cocks &amp; Tails</title>
     <!--Da der anvendes billeder vi ikke har rettigheder til, så fjernes sitet fra søgeresultater -->
     <meta name="robots" content="noindex" />
-    <link href="https://fonts.googleapis.com/css?family=Exo+2:400,900|Rokkitt:400,500&display=swap" rel="stylesheet">
+    <!--Der anvendes følgende fonte: Exo 2 regular og Rokkit regular fra google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Exo+2:400%7CRokkitt:400,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <!-- I headeren har vi splash billedet, men logoet inden i, da de skal ligge oveni hinanden. Splash er en div i stedet for img tag, da det skal beskæres, og dette kan gøres ved at indsætte det som baggrund og arbejde med det derfra, hvorimod img strækkes hvis man prøver at beskære det -->
     <header>
         <div id="splash">
-            <img src="/img/logo.svg" alt="" id="logo">
+            <img src="/img/logov2.svg" alt="" id="logo">
         </div>
     </header>
-
+    <!-- Dette er menuen for knapperne på forsiden -->
     <nav class="menu">
         <button data-kategori="alle" class="valgt">Alle</button>
         <button data-kategori="Let">Let</button>
@@ -26,7 +29,7 @@
     </nav>
 
     <h1 class="overskrift_kategori">Alle Cocktails</h1>
-
+    <!-- Her er template og article der bruges til at oprette alle cocktails på forsiden -->
     <section id="liste"></section>
     <template>
         <article class="drink">
@@ -34,49 +37,8 @@
             <div class="billede"></div>
             <h2 class="navn"></h2>
             <p class="svaerhedsgrad"></p>
-
-
         </article>
     </template>
-    <!--
-    <section id="popup" class="hide">
-        <section class="indhold">
-            <article class="enkeltDrink">
-                <button class="luk">X</button>
-                <img class="billede" src="" alt="">
-                <h1></h1>
-                <div class="row">
-                    <div class="column">
-                        <p class="smag">Smag</p>
-                        <p class="kort">Kort</p>
-                    </div>
-                    <div class="column">
-                        <p class="info">info</p>
-                    </div>
-                </div>
-
-                <div class="row" id="opskrift_row">
-                    <div class="column">
-                        <h3 class="overskrift_opskrift">Opskrift</h3>
-
-                        <div class="column">
-
-                            <p class="ingredienser">ingredienser</p>
-                        </div>
-                    </div>
-                    <div class="column">
-                        <div class="column">
-                            <p class="opskrift">opskrift</p>
-                        </div>
-                    </div>
-                </div>
-
-            </article>
-        </section>
-
-    </section>
--->
-
 
     <script src="script.js"></script>
 
