@@ -351,27 +351,31 @@ button:hover {
         margin: 0 auto;
     }
 
-    .drink:nth-child(1) {
+    /* dette udgør griddet. Det er elementer på specifikke positioner, der er to gridfelter brede. Skulle dette grid laves n antal gange, så skal der ikke anvendes nth-cild(1) men nth-child(9n-8), hvilket vil gentage sig for hvert 9. element. */
+    .drink:nth-child(3) {
         grid-column: 3/5;
-        grid-row: 1/3;
     }
 
     .drink:nth-child(4) {
         grid-column: 1/3;
-        grid-row: 2/4;
     }
 
-    .drink:nth-child(7) {
+    .drink:nth-child(8) {
         grid-column: 2/4;
-        grid-row: 4/4;
     }
 
-    .drink:nth-child(8) .billede {
+    /* for at beskære billederne korrekt er der nogle der skal justeres lidt. Dette gøres med background-position */
+
+    .drink:nth-child(7) .billede {
         background-position: 78%;
     }
 
-    .drink:nth-child(3) .billede {
-        background-position: 29%;
+    .drink:nth-child(1) .billede {
+        background-position: 64%;
+    }
+
+    .drink:nth-child(6) .billede {
+        background-position: 70%;
     }
 
     /*background-position: center;*/
