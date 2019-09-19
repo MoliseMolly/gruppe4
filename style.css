@@ -127,6 +127,18 @@ a {
     height: 200px;
 }
 
+.drink:nth-child(2) .billede {
+    background-position: top;
+}
+
+.drink:nth-child(5) .billede {
+    background-position: top;
+}
+
+.drink:nth-child(9) .billede {
+    background-position: top;
+}
+
 .stort_billede {
     border-radius: 3px;
 }
@@ -354,6 +366,15 @@ button:hover {
         grid-row: 4/4;
     }
 
+    .drink:nth-child(8) .billede {
+        background-position: 78%;
+    }
+
+    .drink:nth-child(3) .billede {
+        background-position: 29%;
+    }
+
+    /*background-position: center;*/
     #logo {
         height: 120px;
         width: 120px;
