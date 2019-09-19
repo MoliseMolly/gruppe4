@@ -31,36 +31,25 @@
         }
 
         function vis(data) {
+            //liste resettes
             liste.innerHTML = "";
+            //her looper vi alle entriesne i sheetet igennem
             data.feed.entry.forEach(drink => {
-                //console.log(drink.gsx$kort.$t)
+                //her sorteres listen
                 if (drink.gsx$svaerhedsgrad.$t == filter || filter == "alle") {
                     let klon = skabelon.cloneNode(true);
+                    /*Herunder sættes informationen ind på hjemmesiden.*/
+                    //Der tilføjes ikke en alt til billedet, da det er indsat som baggrund
+                    klon.querySelector(".billede").style.backgroundImage = `url(${drink.gsx$links.$t})`;
 
-                    /*HUSK AT SLETTE DET NEDENUNDER SOM KOMMENTAR NÅR BILLEDET ER KOMMET PÅ*/
-                    /*const billede = drink.gsx$billede.$t;*/
                     klon.querySelector(".navn").textContent = drink.gsx$navn.$t;
-                    //klon.querySelector(".kort").textContent = kort;
-                    //klon.querySelector(".smag").textContent = "smag: " + drink.gsx$smag.$t;
-
-
                     klon.querySelector(".svaerhedsgrad").textContent = drink.gsx$svaerhedsgrad.$t;
                     klon.querySelector(".kort").textContent = drink.gsx$kort.$t;
-                    let billede = `url(${drink.gsx$links.$t})`
-                    klon.querySelector(".billede").style.backgroundImage = billede;
+
+
+
 
                     /*
-                    //ikke alle billeder er jpg, så her sørges for undtagelsen, nemlig et jpeg billede af en mojito
-                    if (drink.gsx$billeder.$t == "mojito") {
-                        klon.querySelector(".billede").src = `/img/${drink.gsx$billeder.$t}.jpeg`;
-                    } else {
-                        klon.querySelector(".billede").src = `/img/${drink.gsx$billeder.$t}.jpg`;
-                    }*/
-
-                    /*HUSK AT TILFØJE ALT TIL BILLEDET*/
-                    /*klon.querySelector(".billede").alt = "Billede af " + drink.gsx$navn.$t;*/
-                    /*Herunder sættes informationen ind på hjemmesiden.
-
                 Til sidst indsætter vi informationen i templaten så dataen hentet fra json bliver vist i listen */
                     liste.appendChild(klon);
 
@@ -72,29 +61,3 @@
                 }
             })
         }
-
-        /*  function visEnkel(drink) {
-            document.querySelector("#popup").style.display = "block";
-            document.querySelector("#popup .luk").addEventListener("click", lukEnkel);
-
-
-            document.querySelector(".enkeltDrink h1").textContent = drink.gsx$navn.$t;
-
-
-            document.querySelector(".enkeltDrink .billede").src = `${drink.gsx$links.$t}`;
-
-            document.querySelector(".enkeltDrink .billede").alt = "Billede af " + drink.gsx$navn.$t;
-
-            document.querySelector(".enkeltDrink .kort").textContent = drink.gsx$kort.$t;
-            document.querySelector(".enkeltDrink .info").textContent = drink.gsx$info.$t;
-            document.querySelector(".enkeltDrink .ingredienser").textContent = drink.gsx$ingredienser.$t;
-            document.querySelector(".enkeltDrink .opskrift").textContent = drink.gsx$opskrift.$t;
-
-            document.querySelector(".enkeltDrink .smag").textContent = drink.gsx$smag.$t;
-        }
-
-        function lukEnkel() {
-            document.querySelector("#popup").style.display = "none";
-            console.log(data);
-        }
-*/
